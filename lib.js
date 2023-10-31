@@ -7,15 +7,27 @@ function avg(numbers) {
     return s / numbers.length;
 }
 
-function prime(num) {
-    //TODO
-    return false;
-}
 
 function fact(num) {
-    //TODO
-    return -1;
+    if (num < 0) return -1;
+    else if (num == 0) return 1;
+    else {
+        let fact = 1;
+        for (let i = 1; i <= num; i++) {
+            fact *= i;
+        }
+        return fact;
+    }
 }
+
+function prime(num) {
+    if (num < 2) return false;
+    for (let i = 2; i * i <= num; i++) {
+        if (num % i == 0) return false;
+    }
+    return true;
+}
+
 module.exports = { avg, prime, fact }
 
 /*
